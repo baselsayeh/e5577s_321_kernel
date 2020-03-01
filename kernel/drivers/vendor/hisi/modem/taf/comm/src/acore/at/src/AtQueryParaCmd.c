@@ -10640,6 +10640,8 @@ VOS_UINT32 AT_QryTempInfo(VOS_UINT8 ucIndex)
     gstAtSendData.usBufLen = usLength;
     return AT_OK;
 }
+
+#if 0
 /*****************************************************************************
  函 数 名  : AT_QryFtyResetPara
  功能描述  : 恢复出厂设置操作AT^FTYRESET查询命令处理
@@ -10711,7 +10713,9 @@ VOS_UINT32 AT_QryFtyResetPara(VOS_UINT8 ucIndex)
                                                     restore_state);
     return AT_OK;
 }
+#endif
 #endif/*END FOR MBB_COMMON*/
+
 #if (FEATURE_ON == MBB_HWTEST)  
 
 

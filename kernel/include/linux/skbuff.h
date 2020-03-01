@@ -393,7 +393,9 @@ struct sk_buff {
 	struct sk_buff		*prev;
 
 	ktime_t			tstamp;
+#ifdef CONFIG_ATP_GETINDEV
 	struct net_device	*lanindev;   /* add for atp, you MUST use CONFIG_ATP_GETINDEV to use this member */
+#endif
 
 	struct sock		*sk;
 	struct net_device	*dev;
@@ -450,7 +452,13 @@ struct sk_buff {
 #if defined(CONFIG_NF_CONNTRACK) || defined(CONFIG_NF_CONNTRACK_MODULE)
 	struct nf_conntrack	*nfct;
 #if (FEATURE_ON == MBB_CTF_COMMON)
-    __u32    nfcache;
+	union {
+		__u32    nfcache;
+		struct {
+			__u16 tc_verd;
+			__u16 nfcache_high;
+		};
+	};
 #endif
 #endif
 #ifdef NET_SKBUFF_NF_DEFRAG_NEEDED
@@ -469,7 +477,9 @@ struct sk_buff {
 #ifdef CONFIG_NET_SCHED
 	__u16			tc_index;	/* traffic control index */
 #ifdef CONFIG_NET_CLS_ACT
+#if (FEATURE_OFF == MBB_CTF_COMMON)
 	__u16			tc_verd;	/* traffic control verdict */
+#endif
 #endif
 #endif
 

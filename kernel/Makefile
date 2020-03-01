@@ -390,7 +390,7 @@ KERNELVERSION = $(VERSION)$(if $(PATCHLEVEL),.$(PATCHLEVEL)$(if $(SUBLEVEL),.$(S
 
 # add hisilicon balong configs
 KBUILD_AFLAGS += -DCONFIG_ARM_ASM_UNIFIED
-OBB_PRODUCT_NAME := hi6921_v711_e5770s
+OBB_PRODUCT_NAME := hi6921_v711_e5577s
 BALONG_TOPDIR:=$(srctree)/drivers/vendor/hisi
 CFG_OS_ANDROID_PRODUCT_NAME := balong
 TARGET_ARM_TYPE := arm
@@ -555,7 +555,8 @@ libs-y		:= lib/
 core-y		:= usr/
 endif # KBUILD_EXTMOD
 
-huaweidrivers-y	:= package/atp/network/bridge/atpkernel/src/ package/atp/network/common/kernel/src/ package/atp/iconconvert/kernel/src/  package/atp/network/dnscache/
+#huaweidrivers-y	:= package/atp/network/bridge/atpkernel/src/ package/atp/network/common/kernel/src/ package/atp/iconconvert/kernel/src/  package/atp/network/dnscache/
+huaweidrivers-y	:= 
 HUAWEIDRIVERS	:= $(huaweidrivers-y)
 
 ifeq ($(dot-config),1)

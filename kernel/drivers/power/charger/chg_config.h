@@ -4,6 +4,9 @@
 
 #ifndef CHG_CONFIG_H
 #define CHG_CONFIG_H
+
+#include <mbb_config.h>
+
 #if (MBB_CHG_PLATFORM_V7R2 == FEATURE_ON)
 #include "drv_chg.h"
 #include "drv_onoff.h"

@@ -10,7 +10,7 @@
 #define MTD_PARTITIONS_H
 
 #include <linux/types.h>
-
+#include <mbb_config.h>
 
 /*
  * Partition definition structure:

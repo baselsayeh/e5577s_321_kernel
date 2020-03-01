@@ -206,7 +206,7 @@ endif
 ifeq ($(MBB_HWTEST),FEATURE_ON)
 obj-y               += ddr_test/
 endif
-obj-y               += ftyreset/
+#obj-y               += ftyreset/
 ifeq ($(MBB_FEATURE_VSIM_HUK),FEATURE_ON)
 obj-y               += vsim/
 endif

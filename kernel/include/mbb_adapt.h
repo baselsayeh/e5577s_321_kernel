@@ -16,32 +16,32 @@ extern "C"
 /*************************** MBB 自适配文件开始 *****************************/
 /****************************************************************************/
 #define    GPIO_NULL                           (-1)               /* 无此GPIO时取-1 */
-#define    MENU_KEY_GPIO                       (GPIO_NULL)        /* MENU/WPS键 */
+#define    MENU_KEY_GPIO                       (GPIO_0_2)         /* MENU/WPS键 */
 #define    RESET_KEY_GPIO                      (GPIO_0_3)         /* RESET键 */
 #define    WIFI_KEY_GPIO                       (GPIO_NULL)        /* WIFI/WLAN键 */
 #define    FLIGHT_KEY_GPIO                     (GPIO_NULL)        /* FLIGHT键 */
 #define    WIFI_ACTIVE_GPIO                    (GPIO_2_21)        /* wifi enable */
 #define    WIFI_WAKEUP_BB_GPIO                 (GPIO_0_4)         /* wifi wakeup bb */
 #define    CHG_ENABLE_GPIO                     (GPIO_2_1)         /* charge enable */
-#define    CHG_BATT_LOW_INT                    (GPIO_2_4)         /* batt low int */
+#define    CHG_BATT_LOW_INT                    (GPIO_NULL)         /* batt low int */ //For bq27510 only
 #define    CHG_BATT_ID_CHAN                    (0)                /* batt id hkadc channel */
 #define    CHG_BATT_TEMP_CHAN                  (1)                /* batt temp hkadc channel */
 #define    CHG_BATT_VOLT_CHAN                  (8)                /* batt volt hkadc channel */
 #define    CHG_VBUS_VOLT_CHAN                  (-1)               /* vbus volt hkadc channel */
 #define    CHG_USB_TEMP_CHAN                   (2)                /* USB temp hkadc channel */
 #define    LCD_BACKLIGHT_GPIO                  (GPIO_NULL)        /* lcd backlight */
-#define    LCD_ID00_GPIO                       (GPIO_NULL)        /* lcd id0 */
-#define    LCD_ID01_GPIO                       (GPIO_NULL)        /* lcd id1 */
+#define    LCD_ID00_GPIO                       (GPIO_2_20)        /* lcd id0 */
+#define    LCD_ID01_GPIO                       (GPIO_2_22)        /* lcd id1 */
 #define    OLED_ID0_GPIO                       (GPIO_NULL)        /* oled id0 */
 #define    OLED_ID1_GPIO                       (GPIO_NULL)        /* oled id1 */
 #define    OLED_CD_GPIO                        (GPIO_NULL)        /* oled cd */
-#define    OTG_ID_DET_GPIO                     (GPIO_NULL)        /* otg detect */
-#define    OTG_ID_SET_GPIO                     (GPIO_NULL)        /* otg set */
-#define    DMDP_CONNECT_GPIO                   (GPIO_NULL)        /* dmdp connect */
+#define    OTG_ID_DET_GPIO                     (GPIO_0_5)         /* otg detect */
+#define    OTG_ID_SET_GPIO                     (GPIO_2_3)         /* otg set */
+#define    DMDP_CONNECT_GPIO                   (GPIO_2_26)        /* dmdp connect */
 #define    SD_DETECT_GPIO                      (GPIO_NULL)        /* sd detect */
 #define    SIM0_DETECT_GPIO                    (GPIO_NULL)        /* sim detect */
-#define    OTG_ID_SWITCH_GPIO                  (GPIO_NULL)        /* otg detect */
-#define    OTG_VBUS_DET_GPIO                   (GPIO_NULL)        /* otg detect */
+#define    OTG_ID_SWITCH_GPIO                  (GPIO_2_5)         /* otg detect */
+#define    OTG_VBUS_DET_GPIO                   (GPIO_1_27)        /* otg detect */
 #define    EXTCHG_OTG_DET_GPIO                 (GPIO_NULL)        /* extchg otg detect */
 #define    EXTCHG_CHG_ENABLE                   (GPIO_NULL)        /* extern charge enable */
 #define    RE_ILIM_1A_GPIO                     (GPIO_NULL)        /* extcharge limit 1A current */
@@ -55,7 +55,8 @@ extern "C"
 #define    GPIO_PHY_RESET                      (GPIO_NULL)        /* phy reset */
 #define    EXTCHG_SHORT_VOLT_CHAN              (-1)               /* extchg volt channel */
 #define    LCD_RESET_N                         (GPIO_NULL)        /* LCD reset */
-
+
+
 /******************************************************************************/
 /***************************** MBB 自适配文件结束 *****************************/
 /******************************************************************************/

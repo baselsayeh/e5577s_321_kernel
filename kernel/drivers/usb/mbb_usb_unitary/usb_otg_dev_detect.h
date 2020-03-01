@@ -170,10 +170,10 @@ int otg_dev_get_remove_flags(void);
 
 USB_INT usb_otg_device_detect_init(USB_VOID);
 USB_VOID usb_otg_device_detect_exit(USB_VOID);
-OTG_CRADLE_TYPE usb_otg_get_cradle_type();
-OTG_DEVICE_TYPE usb_otg_get_device_type();
-USB_VOID usb_otg_set_device_type();
-USB_VOID usb_otg_pogopin_set();
-USB_VOID usb_otg_pogopin_clean();
+OTG_CRADLE_TYPE usb_otg_get_cradle_type(USB_VOID);
+OTG_DEVICE_TYPE usb_otg_get_device_type(USB_VOID);
+USB_VOID usb_otg_set_device_type(USB_VOID);
+USB_VOID usb_otg_pogopin_set(USB_VOID);
+USB_VOID usb_otg_pogopin_clean(USB_VOID);
 #endif
 

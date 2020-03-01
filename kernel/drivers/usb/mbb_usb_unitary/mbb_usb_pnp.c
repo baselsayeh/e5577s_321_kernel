@@ -1,5 +1,5 @@
 
-
+#include <mbb_config.h>
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/fs.h>
@@ -16,7 +16,6 @@
 #include <linux/proc_fs.h>
 #include <linux/netlink.h>
 #include <linux/notifier.h>
-#include <mbb_config.h>
 
 #include "usb_platform_comm.h"
 #include "hw_pnp.h"

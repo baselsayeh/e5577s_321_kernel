@@ -19,6 +19,13 @@
 #ifndef _TYPEDEFS_H_
 #define _TYPEDEFS_H_
 
+#ifdef __KERNEL__ //building in linux
+#define __LINUX__
+#define LINUX
+#define __linux__
+#define linux
+#endif
+
 
 #ifdef SITE_TYPEDEFS
 
@@ -211,11 +218,11 @@ typedef unsigned int socklen_t;
 
 /* See note above */
 #if !defined(LINUX_HYBRID) || defined(LINUX_PORT)
-#ifdef USER_MODE
+#if !defined(__KERNEL__) //#ifdef USER_MODE
 #include <sys/types.h>
 #else
 #include <linux/types.h>	/* sys/types.h and linux/types.h are oil and water */
-#endif /* USER_MODE */
+#endif /* KERNEL */
 #endif /* !defined(LINUX_HYBRID) || defined(LINUX_PORT) */
 
 #else
@@ -226,7 +233,9 @@ typedef unsigned int socklen_t;
 #include <stdarg.h>
 #endif
 
+#if !defined(__KERNEL__)
 #include <sys/types.h>
+#endif
 
 #endif /* linux && __KERNEL__ */
 

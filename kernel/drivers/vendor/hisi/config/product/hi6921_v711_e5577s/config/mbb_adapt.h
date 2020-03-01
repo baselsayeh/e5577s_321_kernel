@@ -19,28 +19,30 @@ extern "C"
 #define    MENU_KEY_GPIO                       (GPIO_0_2)         /* MENU/WPS键 */
 #define    RESET_KEY_GPIO                      (GPIO_0_3)         /* RESET键 */
 #define    WIFI_KEY_GPIO                       (GPIO_NULL)        /* WIFI/WLAN键 */
-#define    WIFI_ACTIVE_GPIO                    (GPIO_NULL)        /* wifi enable */
+#define    WIFI_ACTIVE_GPIO                    (GPIO_2_21)        /* wifi enable */
 #define    WIFI_WAKEUP_BB_GPIO                 (GPIO_0_4)         /* wifi wakeup bb */
-#define    CHG_ENABLE_GPIO                     (GPIO_NULL)        /* charge enable */
+#define    CHG_ENABLE_GPIO                     (GPIO_2_1)        /* charge enable */
 #define    CHG_BATT_LOW_INT                    (GPIO_NULL)        /* batt low int */
 #define    CHG_BATT_ID_CHAN                    (0)                /* batt id hkadc channel */
-#define    CHG_BATT_TEMP_CHAN                  (2)                /* batt temp hkadc channel */
+#define    CHG_BATT_TEMP_CHAN                  (1)                /* batt temp hkadc channel */
 #define    CHG_BATT_VOLT_CHAN                  (8)                /* batt volt hkadc channel */
 #define    CHG_VBUS_VOLT_CHAN                  (-1)               /* vbus volt hkadc channel */
 #define    LCD_BACKLIGHT_GPIO                  (GPIO_NULL)        /* lcd backlight */
-#define    LCD_ID00_GPIO                       (GPIO_NULL)        /* lcd id0 */
-#define    LCD_ID01_GPIO                       (GPIO_NULL)        /* lcd id1 */
+#define    LCD_ID00_GPIO                       (GPIO_2_20)        /* lcd id0 */
+#define    LCD_ID01_GPIO                       (GPIO_2_22)        /* lcd id1 */
 #define    OLED_ID0_GPIO                       (GPIO_NULL)        /* oled id0 */
 #define    OLED_ID1_GPIO                       (GPIO_NULL)        /* oled id1 */
 #define    OLED_CD_GPIO                        (GPIO_NULL)        /* oled cd */
 #define    OTG_ID_DET_GPIO                     (GPIO_0_5)         /* otg detect */
-#define    OTG_ID_SET_GPIO                     (GPIO_NULL)        /* otg set */
-#define    DMDP_CONNECT_GPIO                   (GPIO_NULL)        /* dmdp connect */
+#define    OTG_ID_SET_GPIO                     (GPIO_2_3)         /* otg set */
+#define    DMDP_CONNECT_GPIO                   (GPIO_2_26)        /* dmdp connect */
 #define    SD_DETECT_GPIO                      (GPIO_NULL)        /* sd detect */
-#define    SIM0_DETECT_GPIO                    (GPIO_NULL)        /* sim detect */
-#define    OTG_ID_SWITCH_GPIO                  (GPIO_NULL)        /* otg detect */
-#define    OTG_VBUS_DET_GPIO                   (GPIO_NULL)        /* otg detect */
-
+//         for sd1: GPIO_2_19
+#define    SIM0_DETECT_GPIO                    (GPIO_NULL)        /* sim detect */ //0xFFFFFFFF from kernel
+#define    OTG_ID_SWITCH_GPIO                  (GPIO_2_5)         /* otg detect */
+#define    OTG_VBUS_DET_GPIO                   (GPIO_1_27)        /* otg detect */
+
+
 /******************************************************************************/
 /***************************** MBB 自适配文件结束 *****************************/
 /******************************************************************************/

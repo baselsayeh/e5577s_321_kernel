@@ -296,7 +296,7 @@ int wlan_nv_read_pow(void * pstPow, unsigned uLen)
  返 回 值  : 0:不处于关机状态
              1:正在关机
 *****************************************************************************/
-int wlan_get_poweroff_status()
+int wlan_get_poweroff_status(void)
 {
     return wlan_pwroff_status;
 }
@@ -327,7 +327,7 @@ EXPORT_SYMBOL(wlan_set_poweroff_status);
  返 回 值  : 0:不处于关机状态
              1:正在关机
 *****************************************************************************/
-int wlan_get_ioctl_status() 
+int wlan_get_ioctl_status(void) 
 {
     PLAT_WLAN_INFO("wlan_ioctl_status = %d",wlan_ioctl_status);
 
@@ -388,7 +388,7 @@ Output:
 Return:
 *******************************************************************/
 
-static void wlan_stus_timer_function()
+static void wlan_stus_timer_function(void)
 {
     int i = 0;
     unsigned long flgs = 0;
@@ -443,7 +443,7 @@ Output:
 Return:
 *******************************************************************/
 
-static void wlan_stus_timer_start()
+static void wlan_stus_timer_start(void)
 {
     init_timer(&wlan_stus_detect_timer);
     wlan_stus_detect_timer.function = wlan_stus_timer_function;  
@@ -1517,7 +1517,7 @@ WIFI_CHIP_TYPE wlan_get_product_wifi_chip_type()
 返 回 值  : WLAN_RETURN_TYPE
 注意事项  : 无。
 **********************************************************************/
-static int wifi_kernel_cache_init()
+static int wifi_kernel_cache_init(void)
 {
 
     int i = 0;
@@ -1556,7 +1556,7 @@ static int wifi_kernel_cache_init()
 返 回 值  : 无。
 注意事项  : 无。
 **********************************************************************/
-static void wifi_kernel_cache_free()
+static void wifi_kernel_cache_free(void)
 {
     int i = 0;
     if (NULL != g_wlan_mem_cache.recv)

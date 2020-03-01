@@ -7,7 +7,7 @@
 #endif 
 
 #ifndef PRODUCT_NAME
-#define PRODUCT_NAME "v711_e5770s" 
+#define PRODUCT_NAME "v711_e5577s" 
 #endif 
 
 #ifndef PRODUCT_CFG_CHIP_SOLUTION_NAME
@@ -19,15 +19,15 @@
 #endif 
 
 #ifndef PRODUCT_VERSION
-#define PRODUCT_VERSION V700R110C30B180 
+#define PRODUCT_VERSION V700R110C30B316 
 #endif 
 
 #ifndef PRODUCT_VERSION_STR
-#define PRODUCT_VERSION_STR "V700R110C30B180" 
+#define PRODUCT_VERSION_STR "V700R110C30B316" 
 #endif 
 
 #ifndef PRODUCT_FULL_VERSION_STR
-#define PRODUCT_FULL_VERSION_STR "Balong V700R110C30B180" 
+#define PRODUCT_FULL_VERSION_STR "Balong V700R110C30B316" 
 #endif 
 
 #ifndef PRODUCT_FILE_VERSION_STR
@@ -35,7 +35,7 @@
 #endif 
 
 #ifndef PRODUCT_DLOAD_SOFTWARE_VER		
-#define PRODUCT_DLOAD_SOFTWARE_VER		 "21.180.00.00.00" 
+#define PRODUCT_DLOAD_SOFTWARE_VER		 "21.316.01.01.778" 
 #endif 
 
 #ifndef PRODUCT_CFG_DLOAD_KIND
@@ -43,11 +43,11 @@
 #endif 
 
 #ifndef PRODUCT_CFG_DLOAD_ID
-#define PRODUCT_CFG_DLOAD_ID BV7R11EC0 
+#define PRODUCT_CFG_DLOAD_ID P711s-E5 
 #endif 
 
 #ifndef PRODUCT_CFG_DLOAD_NAME
-#define PRODUCT_CFG_DLOAD_NAME E5770s 
+#define PRODUCT_CFG_DLOAD_NAME E5577s 
 #endif 
 
 #ifndef PRODUCT_DLOAD_DASHBOARD_VER
@@ -81,7 +81,7 @@
 #endif 
 
 #ifndef OS_PATH
-#define OS_PATH config/product/hi6921_v711_e5770s/os 
+#define OS_PATH config/product/hi6921_v711_e5577s/os 
 #endif 
 
 #ifndef OS_IMG_FILE
@@ -235,7 +235,7 @@
 #endif 
 
 #ifndef GU_FEATURE_CONFIG_PATH
-#define GU_FEATURE_CONFIG_PATH config/product/hi6921_v711_e5770s/include_gu 
+#define GU_FEATURE_CONFIG_PATH config/product/hi6921_v711_e5577s/include_gu 
 #endif 
 
 #ifndef HIFI_INCLUDE
@@ -267,9 +267,13 @@
 #ifndef BSP_CONFIG_BOARD_E5_E5578
 #endif 
 
-#ifndef BSP_CONFIG_BOARD_E5_E5770s
-#define BSP_CONFIG_BOARD_E5_E5770s 
-#endif 
+#ifndef BSP_CONFIG_BOARD_E5577S
+#define BSP_CONFIG_BOARD_E5577S
+#endif
+
+#ifndef BSP_CONFIG_BOARD_E5577S_321
+#define BSP_CONFIG_BOARD_E5577S_321
+#endif
 
 #ifndef BSP_HAS_SEC_FEATURE
 #endif 
@@ -549,16 +553,17 @@
 #endif 
 
 #ifndef CONFIG_FB_EMI_BALONG
+#define CONFIG_FB_EMI_BALONG
 #endif 
 
 #ifndef CONFIG_FB_1_4_5_INCH_BALONG
+#define CONFIG_FB_1_4_5_INCH_BALONG
 #endif 
 
 #ifndef CONFIG_FB_2_4_INCH_BALONG
 #endif 
 
 #ifndef CONFIG_FB_0_9_6_INCH_BALONG
-#define CONFIG_FB_0_9_6_INCH_BALONG 
 #endif 
 
 #ifndef CONFIG_SLIC
@@ -773,9 +778,11 @@
 #define MBB_PTABLE_NVDLOAD_LEN (0x300000) 
 #endif 
 
+/*
 #ifndef MBB_PTABLE_NVUPDATE_LEN
 #define MBB_PTABLE_NVUPDATE_LEN (0x000000) 
 #endif 
+*/
 
 #ifndef MBB_PTABLE_OEMINFO_LEN
 #define MBB_PTABLE_OEMINFO_LEN (0x140000) 
@@ -789,9 +796,11 @@
 #define MBB_PTABLE_KERNELBK_LEN (0x680000) 
 #endif 
 
+/*
 #ifndef MBB_PTABLE_LOGO_LEN
 #define MBB_PTABLE_LOGO_LEN (0x000000) 
 #endif 
+*/
 
 #ifndef MBB_PTABLE_M3IMAGE_LEN
 #define MBB_PTABLE_M3IMAGE_LEN (0x80000) 
@@ -801,9 +810,11 @@
 #define MBB_PTABLE_DSP_LEN (0x340000) 
 #endif 
 
+/*
 #ifndef MBB_PTABLE_MISC_LEN
 #define MBB_PTABLE_MISC_LEN (0x000000) 
 #endif 
+*/
 
 #ifndef MBB_PTABLE_VXWORK_LEN
 #define MBB_PTABLE_VXWORK_LEN (0xA00000) 
@@ -825,9 +836,11 @@
 #define MBB_PTABLE_OM_LEN (0x400000) 
 #endif 
 
+/*
 #ifndef MBB_PTABLE_WEBSDK_LEN
 #define MBB_PTABLE_WEBSDK_LEN (0x500000) 
 #endif 
+*/
 
 #ifndef MBB_PTABLE_WEBUI_LEN
 #define MBB_PTABLE_WEBUI_LEN (0x800000) 
@@ -1234,11 +1247,11 @@
 #endif 
 
 #ifndef FEATURE_OLED
-#define FEATURE_OLED FEATURE_ON 
+#define FEATURE_OLED FEATURE_OFF 
 #endif 
 
 #ifndef FEATURE_TFT
-#define FEATURE_TFT FEATURE_OFF 
+#define FEATURE_TFT FEATURE_ON 
 #endif 
 
 #ifndef FEATURE_MMI_TEST

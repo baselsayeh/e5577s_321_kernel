@@ -626,7 +626,7 @@ int bsp_usb_is_support_usbid_bygpio(void)
     return 0;
 #endif
 }
-int  bsp_usb_usbid_proc()
+int  bsp_usb_usbid_proc(void)
 {
 #ifdef CONFIG_USB_OTG_USBID_BYGPIO
     if (bsp_usb_is_support_usbid_bygpio())

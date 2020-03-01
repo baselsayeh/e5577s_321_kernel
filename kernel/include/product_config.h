@@ -7,7 +7,7 @@
 #endif 
 
 #ifndef PRODUCT_NAME
-#define PRODUCT_NAME "hi6921_v711_e5770s" 
+#define PRODUCT_NAME "hi6921_v711_e5577s" 
 #endif 
 
 #ifndef PRODUCT_TYPE
@@ -23,15 +23,15 @@
 #endif 
 
 #ifndef PRODUCT_VERSION
-#define PRODUCT_VERSION V700R110C30B327 
+#define PRODUCT_VERSION V700R110C30B316 
 #endif 
 
 #ifndef PRODUCT_VERSION_STR
-#define PRODUCT_VERSION_STR "V700R110C30B327" 
+#define PRODUCT_VERSION_STR "V700R110C30B316" 
 #endif 
 
 #ifndef PRODUCT_FULL_VERSION_STR
-#define PRODUCT_FULL_VERSION_STR "Balong V700R110C30B327" 
+#define PRODUCT_FULL_VERSION_STR "Balong V700R110C30B316" 
 #endif 
 
 #ifndef PRODUCT_FILE_VERSION_STR
@@ -39,7 +39,7 @@
 #endif 
 
 #ifndef PRODUCT_DLOAD_SOFTWARE_VER		
-#define PRODUCT_DLOAD_SOFTWARE_VER		 "21.327.09.00.11" 
+#define PRODUCT_DLOAD_SOFTWARE_VER		 "21.316.01.01.778" 
 #endif 
 
 #ifndef PRODUCT_CFG_DLOAD_KIND
@@ -47,15 +47,15 @@
 #endif 
 
 #ifndef PRODUCT_CFG_DLOAD_ID
-#define PRODUCT_CFG_DLOAD_ID BV7R11ED1 
+#define PRODUCT_CFG_DLOAD_ID P711s-E5 
 #endif 
 
 #ifndef PRODUCT_CFG_DLOAD_ID_DEBUG
-#define PRODUCT_CFG_DLOAD_ID_DEBUG BV7R11ED1 
+#define PRODUCT_CFG_DLOAD_ID_DEBUG P711s-E5 
 #endif 
 
 #ifndef PRODUCT_CFG_DLOAD_NAME
-#define PRODUCT_CFG_DLOAD_NAME E5770s 
+#define PRODUCT_CFG_DLOAD_NAME E5577s 
 #endif 
 
 #ifndef PRODUCT_DLOAD_DASHBOARD_VER
@@ -105,7 +105,7 @@
 #endif 
 
 #ifndef OS_PATH
-#define OS_PATH config/product/hi6921_v711_e5770s/os 
+#define OS_PATH config/product/hi6921_v711_e5577s/os 
 #endif 
 
 #ifndef OS_IMG_FILE
@@ -153,7 +153,7 @@
 #endif 
 
 #ifndef LNV_PRO_NAME
-#define LNV_PRO_NAME hi6921_v711_e5770s 
+#define LNV_PRO_NAME hi6921_v711_e5577s 
 #endif 
 
 #ifndef XTENSA_CORE				
@@ -259,7 +259,7 @@
 #endif 
 
 #ifndef GU_FEATURE_CONFIG_PATH
-#define GU_FEATURE_CONFIG_PATH config/product/hi6921_v711_e5770s/include_gu 
+#define GU_FEATURE_CONFIG_PATH config/product/hi6921_v711_e5577s/include_gu 
 #endif 
 
 #ifndef HIFI_INCLUDE
@@ -291,9 +291,13 @@
 #ifndef BSP_CONFIG_BOARD_E5
 #endif 
 
-#ifndef BSP_CONFIG_BOARD_E5770s
-#define BSP_CONFIG_BOARD_E5770s
-#endif 
+#ifndef BSP_CONFIG_BOARD_E5577S
+#define BSP_CONFIG_BOARD_E5577S
+#endif
+
+#ifndef BSP_CONFIG_BOARD_E5577S_321
+#define BSP_CONFIG_BOARD_E5577S_321
+#endif
 
 #ifndef BSP_HAS_SEC_FEATURE
 #endif 
@@ -566,9 +570,11 @@
 #endif 
 
 #ifndef CONFIG_FB_EMI_BALONG
+#define CONFIG_FB_EMI_BALONG
 #endif 
 
 #ifndef CONFIG_FB_1_4_5_INCH_BALONG
+#define CONFIG_FB_1_4_5_INCH_BALONG
 #endif 
 
 #ifndef CONFIG_FB_2_4_INCH_BALONG
@@ -1269,7 +1275,7 @@
 #endif 
 
 #ifndef FEATURE_TFT
-#define FEATURE_TFT FEATURE_OFF 
+#define FEATURE_TFT FEATURE_ON 
 #endif 
 
 #ifndef FEATURE_MMI_TEST

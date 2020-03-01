@@ -287,6 +287,11 @@ config NF_NAT_SIP
 	depends on NF_CONNTRACK && NF_NAT
 	default NF_NAT && NF_CONNTRACK_SIP
 
+config NF_NAT_RTSP
+	tristate
+	depends on NF_CONNTRACK && NF_NAT
+	default NF_NAT && NF_CONNTRACK_RTSP
+
 # mangle + specific targets
 config IP_NF_MANGLE
 	tristate "Packet mangling"

@@ -120,6 +120,17 @@ struct in_addr {
 #define IP_MULTICAST_ALL		49
 #define IP_UNICAST_IF			50
 
+
+
+//
+#ifdef CONFIG_PRSITE
+//Not sure about these!
+#define PRSITE_ADD			53
+#define PRSITE_DEL			54
+#define PRSITE_IPCONFLICT		57
+#endif
+//
+
 #define MCAST_EXCLUDE	0
 #define MCAST_INCLUDE	1
 

@@ -36,6 +36,7 @@ extern "C" {
 #define    THIS_FILE_ID        PS_FILE_ID_RNIC_DEMAND_DIAL_FILE_IO_C
 #define WLAN_DEV_NAME_LEN   64
 
+#if 0
 /*目前记录4个*/
 char g_wlan1_name[IFNAMSIZ] = {0};
 char g_wlan2_name[IFNAMSIZ] = {0};
@@ -44,12 +45,15 @@ char g_wlan4_name[IFNAMSIZ] = {0};
 
 /*记录eth0是否为lan设备*/
 char g_eth_is_lan[IFNAMSIZ] = {0};
+#endif
 
 /*****************************************************************************
   2 全局变量定义
 *****************************************************************************/
 /*记录当前的拨号模式*/
+#if 0
 int g_atp_redirect_dailmode = 0;
+#endif
 
 #if (VOS_OS_VER == VOS_LINUX)
 
@@ -82,6 +86,7 @@ static const struct file_operations g_stDialEventReportFileOps;
 /*****************************************************************************
   3 函数实现
 *****************************************************************************/
+#if 0
 /*****************************************************************************
  函 数 名  : RNIC_PraseWlanDevName
  功能描述  : 解析wlan的设备名
@@ -144,7 +149,7 @@ void RNIC_PraseWlanDevName(char* namebuf)
     VOS_sprintf(g_wlan4_name, "%s", file_name);
     return;
 }
-
+#endif
 
 VOS_UINT32 RNIC_TransferStringToInt(VOS_CHAR *pcString)
 {
@@ -266,7 +271,9 @@ ssize_t RNIC_WriteOnDemandFile(
     /* 保存拨号模式上下文中 */
     pstDialMode->enDialMode             = stDialMode.enDialMode;
     /*拷贝拨号模式到全局变量中*/
+#if 0
     g_atp_redirect_dailmode  = (int)pstDialMode->enDialMode;
+#endif
 
     RNIC_SendDialInfoMsg(ID_RNIC_MNTN_DIAL_MODE_INFO);
 

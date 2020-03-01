@@ -30,7 +30,7 @@ static DEFINE_SPINLOCK(list_spinlock); //lint !e43 !e64 !e120
 LOCAL_1 bool is_power_off_charge_in( void );
 LOCAL_1 void power_off_set_flag_and_reboot( power_off_reboot_flag enRebootFlag );
 
-extern DRV_START_MODE chg_get_start_mode();/*lint !e10*/
+extern DRV_START_MODE chg_get_start_mode(void);/*lint !e10*/
 
 power_off_ctrl_s power_off_ctrl = {DRV_SHUTDOWN_BUTT, {0,0,0,0,0,0,0,0,0}};
 

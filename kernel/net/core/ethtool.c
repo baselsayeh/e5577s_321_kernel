@@ -1511,7 +1511,7 @@ int dev_ethtool(struct net *net, struct ifreq *ifr)
 	return rc;
 }
 
-void dump_qdisc_stat()
+void dump_qdisc_stat(void)
 {
     struct net_device *net;
 

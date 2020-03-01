@@ -121,7 +121,7 @@ int bsp_usb_is_support_shell(void);
 /* ncm host assemble function */
 int ncm_set_host_assemble_param(int net_id, unsigned long host_timeout);
 
-int  bsp_usb_usbid_proc();
+int  bsp_usb_usbid_proc(void);
 
 #ifdef __cplusplus
 } /* allow C++ to use these headers */

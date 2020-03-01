@@ -542,11 +542,11 @@ static __inline__ void hi_pwrctrl_tcxo1_abb_en_disable(void)
 /****************************p531 end*********************************/
 
 /* for pm */
-static __inline__ unsigned int hi_pwrctrl_get_pwr_ctrl2_abb_ch1_tcxo_en()
+static __inline__ unsigned int hi_pwrctrl_get_pwr_ctrl2_abb_ch1_tcxo_en(void)
 {
     return get_hi_pwr_ctrl2_abb_ch1_tcxo_en();
 }
-static __inline__ unsigned int hi_pwrctrl_get_pwr_ctrl2_pmu_ch1_tcxo_en()
+static __inline__ unsigned int hi_pwrctrl_get_pwr_ctrl2_pmu_ch1_tcxo_en(void)
 {
     return get_hi_pwr_ctrl2_pmu_ch1_tcxo_en();
 }

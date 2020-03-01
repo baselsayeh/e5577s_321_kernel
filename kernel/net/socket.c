@@ -104,9 +104,7 @@
 #include <linux/route.h>
 #include <linux/sockios.h>
 #include <linux/atalk.h>
-#ifdef CONFIG_ATP_ROUTE
-#include <linux/atphooks.h>
-#endif
+
 static int sock_no_open(struct inode *irrelevant, struct file *dontcare);
 static ssize_t sock_aio_read(struct kiocb *iocb, const struct iovec *iov,
 			 unsigned long nr_segs, loff_t pos);
@@ -2587,10 +2585,6 @@ static int __init sock_init(void)
 
 #ifdef CONFIG_NETFILTER
 	netfilter_init();
-#endif
-
-#ifdef CONFIG_ATP_ROUTE
-	atphooks_init();
 #endif
 
 #ifdef CONFIG_NETWORK_PHY_TIMESTAMPING

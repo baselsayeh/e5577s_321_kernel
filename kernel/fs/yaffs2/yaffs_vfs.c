@@ -37,6 +37,7 @@
  */
 
 #include <linux/version.h>
+#include <mbb_config.h>
 #if(MBB_REB == FEATURE_ON)
 #include "../../reb_V100R001/reb_os/reb_mod/reb_func.h"
 #endif

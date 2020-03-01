@@ -152,7 +152,7 @@ USB_INT usb_ctf_forward(struct sk_buff *skb)
     return (BCME_ERROR);
 }
 
-USB_VOID eth_open_test()
+USB_VOID eth_open_test(void)
 {
     if(!usb_cih)
     {

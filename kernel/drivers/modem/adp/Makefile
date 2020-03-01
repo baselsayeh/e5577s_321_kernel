@@ -65,7 +65,9 @@ ifeq ($(strip $(CFG_CONFIG_M2M_HSUART)),NO)
 obj-y           += adp_dialup_hsuart.o
 endif
 obj-y           += adp_reset.o
-obj-y           += adp_cshell.o
+ifeq ($(strip $(CFG_CONFIG_CSHELL)),YES)
+#####obj-y           += adp_cshell.o
+endif
 ifeq ($(strip $(CFG_CONFIG_PASTAR_DSM)),YES)
 obj-y			+= adp_pmu_hi6561.o
 endif

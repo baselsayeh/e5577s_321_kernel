@@ -23,6 +23,7 @@
 #include <linux/gfp.h>
 #include <linux/delay.h>
 #include <linux/clk.h>
+#include <mbb_config.h>
 #if (FEATURE_ON == MBB_USB_CPE)
 #include <linux/gpio.h>
 #endif

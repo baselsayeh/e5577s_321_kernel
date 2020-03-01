@@ -929,11 +929,13 @@ AT_PAR_CMD_ELEMENT_STRU g_astAtDeviceCmdTbl[] = {
     VOS_NULL_PTR,        AT_NOT_SET_TIME,
     AT_CME_INCORRECT_PARAMETERS, CMD_TBL_PIN_IS_LOCKED,
     (VOS_UINT8*)"^TEMPINFO",  VOS_NULL_PTR},
+#if 0
     {AT_CMD_FTYRESET,
     AT_SetFtyResetPara, AT_NOT_SET_TIME, AT_QryFtyResetPara, AT_NOT_SET_TIME, VOS_NULL_PTR, AT_NOT_SET_TIME,
     VOS_NULL_PTR, AT_NOT_SET_TIME,
     AT_CME_INCORRECT_PARAMETERS, CMD_TBL_PIN_IS_LOCKED,
     (VOS_UINT8*)"^FTYRESET",  (VOS_UINT8 *)"(0,1,2)"},
+#endif
 #endif
 #if(FEATURE_ON == MBB_OPERATOR_VDF)
     {AT_CMD_SKU,
@@ -989,7 +991,7 @@ AT_PAR_CMD_ELEMENT_STRU g_astAtDeviceCmdTbl[] = {
 *****************************************************************************/
 #if (FEATURE_ON == MBB_COMMON)
 
-VOS_UINT32 At_CheckWiwepHex()
+VOS_UINT32 At_CheckWiwepHex(void)
 {
     int wepIndex = 0;
     VOS_UINT8 *PaucPara = gastAtParaList[1].aucPara;

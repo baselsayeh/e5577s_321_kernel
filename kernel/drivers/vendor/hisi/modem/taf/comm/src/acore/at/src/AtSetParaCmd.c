@@ -36936,6 +36936,7 @@ VOS_UINT32 AT_SetAudioPara(VOS_UINT8 ucIndex)
 #endif
 }
 
+#if 0
 /*****************************************************************************
  函 数 名  : at_get_ftyreset_set_flag
  功能描述  : 查询当前是否设置过AT^FTYRESET=0命令
@@ -36994,6 +36995,7 @@ VOS_UINT32 AT_SetFtyResetPara(VOS_UINT8 ucIndex)
     return AT_OK;
 }
 
+#endif
 #endif/*END FOR MBB_COMMON*/
 
 #if ((FEATURE_ON == MBB_SIMLOCK_THREE) || (FEATURE_ON == MBB_SIMLOCK_FOUR))

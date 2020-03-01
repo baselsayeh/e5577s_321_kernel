@@ -87,6 +87,8 @@ void key_int_disable(KEY_ENUM key)
 {
     if(MENU_KEY == key)
     {
+        gpio_int_mask_set(MENU_KEY_GPIO);
+		gpio_int_state_clear(MENU_KEY_GPIO);
     }
     else if(RESET_KEY == key)
     {
@@ -112,6 +114,8 @@ void key_int_enable(KEY_ENUM key)
 {
     if(MENU_KEY == key)
     {
+        gpio_int_state_clear(MENU_KEY_GPIO);
+		gpio_int_unmask_set(MENU_KEY_GPIO);
     }
     else if(RESET_KEY == key)
     {
@@ -571,6 +575,15 @@ struct platform_driver v7r2_gpio_key_driver = {
 };
 
 static struct gpio_keys_button gpio_keys_buttons[] = {
+		{
+			.code			= KEY_MENU,
+			.gpio			= MENU_KEY_GPIO,
+			.active_low		= 0,
+			.desc			= "menu key",
+	 		.type			= EV_KEY,
+			.wakeup			= 1,
+	 		.debounce_interval	= 20,
+		},
 		{
 			.code			= KEY_F24,
 			.gpio			= RESET_KEY_GPIO,

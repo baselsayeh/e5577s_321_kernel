@@ -422,6 +422,7 @@ STATIC ssize_t dload_store_ota_info(struct class *class,
     return count;
 }
 
+#if 0
 /*****************************************************************
 * 函 数 名   : dload_set_online_flag
 * 功能描述  : at^godload中在重启前设置flag, 若非
@@ -500,12 +501,13 @@ STATIC ssize_t dload_store_auto_flag(struct class *class,
 
     return count;
 }
+#endif
 
 STATIC CLASS_ATTR(ota_up, S_IRUGO | S_IWUSR, dload_show_ota_info, dload_store_ota_info);
-STATIC CLASS_ATTR(auto_up, S_IRUGO | S_IWUSR, NULL, dload_store_auto_flag);
+//STATIC CLASS_ATTR(auto_up, S_IRUGO | S_IWUSR, NULL, dload_store_auto_flag);
 STATIC struct class_attribute *dload_attributes[] = {
         &class_attr_ota_up,   /* ota_up */
-        &class_attr_auto_up,  /*online_flag--自动升级标志设置class文件,在线升级使用*/
+        //&class_attr_auto_up,  /*online_flag--自动升级标志设置class文件,在线升级使用*/
 };
 
 /******************************************************************************

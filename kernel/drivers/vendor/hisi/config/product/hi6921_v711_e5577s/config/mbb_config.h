@@ -49,22 +49,24 @@ extern "C"
 #define    MBB_FEATURE_SD_POLLING              FEATURE_OFF        /* 一级宏：SD卡轮询检测 */
 #define    MBB_FEATURE_PHY_NUM                 FEATURE_ON         /* 一级宏：硬件版本号适配 */
 #define    MBB_REB                             FEATURE_ON         /* 一级宏：软件可靠性 */
-#define    MBB_CTF_COMMON                      FEATURE_OFF        /* 一级宏：CTF特性宏。由于BCM提供的ctf.ko中MBB_CTF_COMMON和MBB_CTF_WIFI_IPV6都是打开的，因此我们代码中这两个宏也应该同时打开或关闭 */
+#define    MBB_CTF_COMMON                      FEATURE_ON         /* 一级宏：CTF特性宏。由于BCM提供的ctf.ko中MBB_CTF_COMMON和MBB_CTF_WIFI_IPV6都是打开的，因此我们代码中这两个宏也应该同时打开或关闭 */
 #define    MBB_FEATURE_CAT_MODULE_SET          FEATURE_OFF        /* 一级宏：单板CAT等级 */
 #define    MBB_SIMLOCK_THREE                   FEATURE_ON         /* 一级宏：simlock 3.0 */
 #define    MBB_USB                             FEATURE_ON         /* 一级宏：USB */
 #define    MBB_DLOAD                           FEATURE_ON         /* 一级宏：升级 */
-#define    MBB_LED                             FEATURE_OFF        /* 一级宏：LED */
-#define    MBB_LCD                             FEATURE_OFF        /* 一级宏：LCD */
-#define    MBB_OLED                            FEATURE_ON         /* 一级宏：OLED */
+#define    MBB_LED                             FEATURE_ON         /* 一级宏：LED */
+#define    MBB_LCD                             FEATURE_ON         /* 一级宏：LCD */
+#define    MBB_OLED                            FEATURE_OFF        /* 一级宏：OLED */
 #define    MBB_SLIC                            FEATURE_OFF        /* 一级宏：SLIC特性宏 */
 #define    MBB_FEATURE_32K_CLK_SRC             FEATURE_OFF        /* 一级宏：2K时钟源分频 */
-#define    MBB_FEATURE_FASTIP                  FEATURE_ON         /* 一级宏：FastIP */
+#define    MBB_FEATURE_FASTIP                  FEATURE_OFF        /* 一级宏：FastIP */
 #define    MBB_ANTENNA                         FEATURE_OFF        /* 一级宏：天线切换 */
-#define    MBB_FEATURE_ETH                     FEATURE_ON         /* 一级宏：ethernet */
+#define    MBB_FEATURE_ETH                     FEATURE_OFF        /* 一级宏：ethernet */
 #define    MBB_ECCSTATUS_OPTIMIZE              FEATURE_ON         /* 一级宏：ECC状态获取 文件系统和硬件自检功能需开启 */
 #define    MBB_SOFT_POWER_OFF                  FEATURE_OFF        /* 一级宏：软关机功能宏 */
-#define    MBB_HWTEST                          FEATURE_ON         /* 一级宏：硬件自检功能 */
+//#define    MBB_HWTEST                          FEATURE_ON         /* 一级宏：硬件自检功能 */
+//Although its on on the original kernel, but there is code missing
+#define    MBB_HWTEST                          FEATURE_OFF
 #define    MBB_FEATURE_FILE_OPERATION          FEATURE_ON         /* 一级宏：MLOG文件读取工具宏 */
 #define    MBB_CRADLE_FEATURE                  FEATURE_OFF        /* 一级宏：CRADLE AF35控制编译宏 */
 #define    MBB_OPERATOR_VDF                    FEATURE_OFF        /* 一级宏：vodafone操作特性宏 */
@@ -123,10 +125,10 @@ extern "C"
 #if (FEATURE_ON == MBB_CHARGE)
 #define    MBB_CHG_PLATFORM_V7R2               FEATURE_ON         /* 二级宏：V7R2特性宏 */
 #define    MBB_CHG_PLATFORM_9X25               FEATURE_OFF        /* 二级宏：9X25特性宏 */
-#define    MBB_CHG_BAT_KNOCK_DOWN              FEATURE_OFF        /* 二级宏：是否可拆卸电池,ON:是；OFF:不是；不定义：不带电池 */
-#define    MBB_CHG_LCD                         FEATURE_OFF        /* 二级宏：LCD产品特性宏 */
+#define    MBB_CHG_BAT_KNOCK_DOWN              FEATURE_ON         /* 二级宏：是否可拆卸电池,ON:是；OFF:不是；不定义：不带电池 */
+#define    MBB_CHG_LCD                         FEATURE_ON         /* 二级宏：LCD产品特性宏 */
 #define    MBB_CHG_LED                         FEATURE_OFF        /* 二级宏：LED产品特性宏 */
-#define    MBB_CHG_OLED                        FEATURE_ON         /* 二级宏：OLED产品特性宏 */
+#define    MBB_CHG_OLED                        FEATURE_OFF        /* 二级宏：OLED产品特性宏 */
 #define    MBB_CHG_TOUCH                       FEATURE_OFF        /* 二级宏：TOHCH产品特性宏 */
 #define    MBB_CHG_LINUX                       FEATURE_ON         /* 二级宏：LINUX系统特性宏 */
 #define    MBB_CHG_VXWORKS                     FEATURE_OFF        /* 二级宏：LINUX系统特性宏 */
@@ -143,9 +145,9 @@ extern "C"
 #define    MBB_CHG_MC                          FEATURE_ON         /* 二级宏：MC特性宏 */
 #define    MBB_CHG_POWER_SUPPLY                FEATURE_ON         /* 二级宏：power supply特性宏 */
 #define    MBB_CHG_COULOMETER                  FEATURE_OFF        /* 二级宏：库仑计特性宏 */
-#define    MBB_CHG_BQ27510                     FEATURE_ON         /* 二级宏：外置库仑计特性宏 */
-#define    MBB_CHG_HIGH_VOLT_BATT              FEATURE_OFF        /* 二级宏：高压电池特性宏 */
-#define    MBB_CHG_BAT_CAPABILITY               3000              /* 二级宏：电池容量 */
+#define    MBB_CHG_BQ27510                     FEATURE_OFF        /* 二级宏：外置库仑计特性宏 */
+#define    MBB_CHG_HIGH_VOLT_BATT              FEATURE_ON         /* 二级宏：高压电池特性宏 */
+#define    MBB_CHG_BAT_CAPABILITY               1500              /* 二级宏：电池容量 */
 #endif
 
 #if (FEATURE_OFF == MBB_CHARGE)
@@ -177,7 +179,7 @@ extern "C"
 #endif
 
 #if (FEATURE_ON == MBB_WIFI)
-#define    MBB_WIFI_CHIP1                      rtl8192            /* 二级宏：该宏控制编译哪款芯片.芯片目录命名规则为厂商+编号如：rtl8129, bcm43217,这是和对应的驱动目录名称要一样的。 */
+#define    MBB_WIFI_CHIP1                      bcm43241           /* 二级宏：该宏控制编译哪款芯片.芯片目录命名规则为厂商+编号如：rtl8129, bcm43217,这是和对应的驱动目录名称要一样的。 */
 #define    MBB_WIFI_CHIP2                      FEATURE_OFF        /* 二级宏：该宏控制编译哪款芯片.芯片目录命名规则为厂商+编号如：rtl8129, bcm43217,这是和对应的驱动目录名称要一样的。 */
 #endif
 
@@ -188,8 +190,8 @@ extern "C"
 
 #if (FEATURE_ON == MBB_WPG_COMMON)
 #define    MBB_FEATURE_UNI_PS_CALL             FEATURE_OFF        /* 二级宏：拨号 */
-#define    MBB_FEATURE_BIP                     FEATURE_OFF        /* 二级宏：BIP特性 */
-#define    MBB_FEATURE_BIP_TEST                FEATURE_OFF        /* 二级宏：BIP特性测试宏 */
+#define    MBB_FEATURE_BIP                     FEATURE_ON         /* 二级宏：BIP特性 */
+#define    MBB_FEATURE_BIP_TEST                FEATURE_ON         /* 二级宏：BIP特性测试宏 */
 #define    MBB_FEATURE_MPDP                    FEATURE_OFF        /* 二级宏：MPDP特性测试宏 */
 #define    MBB_FEATURE_GATEWAY                 FEATURE_OFF        /* 二级宏：适配网关特性测试宏 */
 #define    MBB_FEATURE_AT_CMD_FILTER           FEATURE_ON         /* 二级宏：屏蔽AT命令宏 */
@@ -266,6 +268,9 @@ extern "C"
 #define    MBB_DLOAD_MCPEUP                    FEATURE_OFF        /* 二级宏：AP+Modem形态CPE升级 */
 #define    MBB_DLOAD_E5                        FEATURE_ON         /* 二级宏：E5升级 */
 #define    MBB_DLOAD_AUTO_UPDATE               FEATURE_ON         /* 二级宏：自动恢复升级宏 */
+#define    MBB_DLOAD_VER_VERIFY                FEATURE_ON
+#define    MBB_DLOAD_OEM_PART_IM               FEATURE_OFF
+#define    MBB_DLOAD_SERVER_SIGN               FEATURE_OFF
 #endif
 
 #if (FEATURE_OFF == MBB_DLOAD)
@@ -282,10 +287,13 @@ extern "C"
 #define    MBB_DLOAD_MCPEUP                    FEATURE_OFF        /* 二级宏：AP+Modem形态CPE升级 */
 #define    MBB_DLOAD_E5                        FEATURE_OFF        /* 二级宏：E5升级 */
 #define    MBB_DLOAD_AUTO_UPDATE               FEATURE_OFF        /* 二级宏：自动恢复升级宏 */
+#define    MBB_DLOAD_VER_VERIFY                FEATURE_OFF
+#define    MBB_DLOAD_OEM_PART_IM               FEATURE_OFF
+#define    MBB_DLOAD_SERVER_SIGN               FEATURE_OFF
 #endif
 
 #if (FEATURE_ON == MBB_LED)
-#define    MBB_LED_DR                          FEATURE_ON         /* 二级宏：DR灯 */
+#define    MBB_LED_DR                          FEATURE_OFF        /* 二级宏：DR灯 */
 #define    MBB_LED_GPIO                        FEATURE_ON         /* 二级宏：GPIO灯 */
 #endif
 
@@ -305,7 +313,7 @@ extern "C"
 #endif
 
 #if (FEATURE_ON == MBB_FEATURE_ETH)
-#define    MBB_FEATURE_ETH_PHY                 FEATURE_ON         /* 二级宏：RGMII口接PHY芯片 */
+#define    MBB_FEATURE_ETH_PHY                 FEATURE_OFF        /* 二级宏：RGMII口接PHY芯片 */
 #define    MBB_FEATURE_ETH_SWITCH              FEATURE_OFF        /* 二级宏：RGMII口接SWITCH芯片 */
 #define    MBB_FEATURE_ETH_WAN_MIRROR          FEATURE_OFF        /* 二级宏：镜像抓包 */
 #endif

@@ -148,7 +148,7 @@ VOS_INT32 AT_atoi(VOS_CHAR *str)
     }
 } 
 
-VOS_INT32 mlog_use_share_partion()
+VOS_INT32 mlog_use_share_partion(void)
 {
     VOS_UINT32 file_size = 0;
     VOS_INT32 ret = 0;

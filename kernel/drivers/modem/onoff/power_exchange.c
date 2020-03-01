@@ -87,7 +87,7 @@ void power_on_acore_state_set(a_kernel_st_e state)
  调用函数  : 
  被调函数  :
 *****************************************************************************/
-a_kernel_st_e power_on_acore_state_get()
+a_kernel_st_e power_on_acore_state_get(void)
 {
     power_info_s *pw_st = (power_info_s *)(SRAM_REBOOT_ADDR);
 

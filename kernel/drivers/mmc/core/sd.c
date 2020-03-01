@@ -37,7 +37,7 @@
 //unsigned int sd_removed = 1;
 
 #if (FEATURE_ON == MBB_USB_SD)
-extern int sd_block_minors;     //sd card dynamic minor 
+int sd_block_minors;     //sd card dynamic minor 
 #endif
 
 #if defined(BSP_CONFIG_BOARD_E5577S_324)

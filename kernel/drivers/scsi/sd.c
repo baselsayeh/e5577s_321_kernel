@@ -156,7 +156,7 @@ struct proc_dir_entry *proc_physicalmedium = NULL;
 struct usb_diskinfo *diskinfos = NULL;
 
 /*get a free member*/
-static struct usb_diskinfo * get_freediskslot()
+static struct usb_diskinfo * get_freediskslot(void)
 {
     int i = 0;
 	int j = -1;

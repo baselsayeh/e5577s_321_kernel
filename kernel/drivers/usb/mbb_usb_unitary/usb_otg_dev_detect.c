@@ -325,7 +325,7 @@ static USB_VOID otg_dev_identify(struct otg_dev_det* otg)
     g_device_type = otg->dev.dev_type;
     otg_dev_insert(otg);
 }
-static USB_VOID otg_id_adc_detect()
+static USB_VOID otg_id_adc_detect(void)
 {
      USB_INT tmp_ret = -1;
      u16 tmp_rtn_vbat_val = 0;

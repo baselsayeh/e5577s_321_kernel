@@ -11,10 +11,12 @@
 		Ex)   export CROSS_COMPILE=arm-eabi-
 
 		$ mkdir -p ../out/drivers/modem/balong_oam_ps
-		$ make ARCH=arm O=../out hi6921_v711_e5770s-923_defconfig
-		$ make ARCH=arm O=../out -j8
+		$ make ARCH=arm O=../out e5577_defconfig
+		$ make ARCH=arm O=../out -j4
 
 2. How to Build wifi
+	- Currently, you cannot build the wifi module (BCMDHD), it needs to be patched.
+	- This section is left untouched
 	- edit Makefile
 		edit "CROSS_COMPILE" to right toolchain path(You downloaded).
 		Ex)   export PATH=$PATH:$(android platform directory you download)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/arm-linux-androideabi-

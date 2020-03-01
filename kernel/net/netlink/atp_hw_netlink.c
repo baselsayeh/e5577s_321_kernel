@@ -214,7 +214,7 @@ static void syswatch_queue_skb(struct sk_buff *skb)
     (*ppstItem)->skb = skb;
 }
 
-static void syswatch_queue_destroy()
+static void syswatch_queue_destroy(void)
 {
     QUEUED_SKB *pstItem = NULL;
     QUEUED_SKB *pstNext = NULL;

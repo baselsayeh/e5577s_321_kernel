@@ -1838,10 +1838,11 @@ static struct console gs_console =
 /*****************************************************************
 Parameters    :  USB_VOID
 Return        :
-Description   :  判断USB 控制台使能接口
+Description   :  锟叫讹拷USB 锟斤拷锟斤拷台使锟杰接匡拷
 *****************************************************************/
-USB_INT gs_acm_is_console_enable(USB_VOID)
+static inline USB_INT gs_acm_is_console_enable(USB_VOID)
 {
+#if 0
 #ifdef USB_SECURITY
     if (1 == usb_port_enable("shell"))
     {
@@ -1854,17 +1855,20 @@ USB_INT gs_acm_is_console_enable(USB_VOID)
         return 0;
     }
 #else
-    /*默认USB shell 功能不可用*/
+    /*默锟斤拷USB shell 锟斤拷锟杰诧拷锟斤拷锟斤拷*/
     DBG_I(MBB_ACM,"gs_acm_is_console_enable is disable\n");
     return 0;
 #endif
+#endif
+
+return (get_shell_lock() == 2);
 }
 
 static acm_ctx_t* acm_ctx = NULL;
 /*****************************************************************
 Parameters    :  USB_VOID
 Return        :
-Description   :  USB初始化时调
+Description   :  USB锟斤拷始锟斤拷时锟斤拷
 *****************************************************************/
 USB_INT bsp_usb_console_init(USB_VOID)
 {
@@ -1923,14 +1927,19 @@ USB_INT bsp_usb_console_init(USB_VOID)
 
     if (gs_acm_is_console_enable())
     {
+        DBG_I(MBB_ACM,"%s: gs_acm_is_console_enable return 1\n", "gs_acm_is_console_enable");
         /* reg from uart shell to usb shell */
         register_console(&gs_console);
         console_start(&gs_console);
+    } else {
+        DBG_E(MBB_ACM,"%s: gs_acm_is_console_enable return 0\n", "gs_acm_is_console_enable");
     }
 
     return 0;
 
 console_init_fail:
+    DBG_E(MBB_ACM,"cannot register, err=%d\n", status);
+
     put_tty_driver(gs_console_tty_driver);
     return status;
 }
@@ -2048,21 +2057,21 @@ USB_INT acm_serial_mem_dump(USB_PCHAR buffer, USB_UINT buf_size)
 /*****************************************************************
 Parameters    :   None
 Return        :
-Description   :  USB serial模块初始化入口
+Description   :  USB serial模锟斤拷锟斤拷始锟斤拷锟斤拷锟斤拷
 *****************************************************************/
 USB_INT usb_serial_init(USB_VOID)
 {
-    /*巴龙平台*/
+    /*锟斤拷锟斤拷平台*/
     USB_INT ret_val = 0;
 
     DBG_I(MBB_ACM,"%s:entry!\n",__func__);
 #ifdef MBB_USB_UNITARY_B
-    /*获取当前console回调*/
+    /*锟斤拷取锟斤拷前console锟截碉拷*/
 #endif
 
-    /*高通9xN5平台内核不支持读NV，其NV值由平台适配*/
+    /*锟斤拷通9xN5平台锟节核诧拷支锟街讹拷NV锟斤拷锟斤拷NV值锟斤拷平台锟斤拷锟斤拷*/
 #ifdef MBB_USB_UNITARY_Q
-    /*获取当前console回调*/
+    /*锟斤拷取锟斤拷前console锟截碉拷*/
     //usb_get_console_cb = xxx;
 #endif
     acm_ctx = acm_get_ctx();

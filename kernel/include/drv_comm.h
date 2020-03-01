@@ -3,6 +3,7 @@
 #ifndef __DRV_COMM_H__
 #define __DRV_COMM_H__
 
+#include <mbb_config.h>
 
 
 /*************************GLOBAL BEGIN*****************************/

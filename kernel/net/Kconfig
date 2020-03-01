@@ -170,6 +170,13 @@ menuconfig NETFILTER
 
 if NETFILTER
 
+config PRSITE
+	bool "netfilter PRSITE"
+	depends on NETFILTER
+	default y
+	help
+	  PRSITE for netfilter
+
 config NETFILTER_DEBUG
 	bool "Network packet filtering debugging"
 	depends on NETFILTER

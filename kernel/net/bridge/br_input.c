@@ -19,9 +19,7 @@
 #include <linux/netfilter_bridge.h>
 #include <linux/export.h>
 #include "br_private.h"
-#ifdef CONFIG_ATP_ROUTE
-#include <linux/atphooks.h>
-#endif
+
 /* Bridge group multicast address 802.1d (pg 51). */
 const u8 br_group_address[ETH_ALEN] = { 0x01, 0x80, 0xc2, 0x00, 0x00, 0x00 };
 
@@ -38,11 +36,7 @@ static int br_pass_frame_up(struct sk_buff *skb)
 	u64_stats_update_begin(&brstats->syncp);
 	brstats->rx_packets++;
 	brstats->rx_bytes += skb->len;
-	u64_stats_update_end(&brstats->syncp);
-#ifdef CONFIG_ATP_ROUTE
-	//ipcheck 处理arp时需要lan侧设备
-	ATP_HOOK_VOID(ATP_BR_LOCALIN_BF_CHG_DEV, skb, NULL, NULL);
-#endif    
+	u64_stats_update_end(&brstats->syncp);  
 	indev = skb->dev;
 #ifdef CONFIG_ATP_GETINDEV
     skb->lanindev = indev;
