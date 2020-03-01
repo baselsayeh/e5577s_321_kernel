@@ -1838,9 +1838,9 @@ static struct console gs_console =
 /*****************************************************************
 Parameters    :  USB_VOID
 Return        :
-Description   :  锟叫讹拷USB 锟斤拷锟斤拷台使锟杰接匡拷
+Description   :  判断USB 控制台使能接口
 *****************************************************************/
-static inline USB_INT gs_acm_is_console_enable(USB_VOID)
+static inline gs_acm_is_console_enable(USB_VOID)
 {
 #if 0
 #ifdef USB_SECURITY
@@ -1855,20 +1855,20 @@ static inline USB_INT gs_acm_is_console_enable(USB_VOID)
         return 0;
     }
 #else
-    /*默锟斤拷USB shell 锟斤拷锟杰诧拷锟斤拷锟斤拷*/
+    /*默认USB shell 功能不可用*/
     DBG_I(MBB_ACM,"gs_acm_is_console_enable is disable\n");
     return 0;
 #endif
 #endif
 
-return (get_shell_lock() == 2);
+    return (get_shell_lock() == 2);
 }
 
 static acm_ctx_t* acm_ctx = NULL;
 /*****************************************************************
 Parameters    :  USB_VOID
 Return        :
-Description   :  USB锟斤拷始锟斤拷时锟斤拷
+Description   :  USB初始化时调
 *****************************************************************/
 USB_INT bsp_usb_console_init(USB_VOID)
 {
@@ -1939,7 +1939,6 @@ USB_INT bsp_usb_console_init(USB_VOID)
 
 console_init_fail:
     DBG_E(MBB_ACM,"cannot register, err=%d\n", status);
-
     put_tty_driver(gs_console_tty_driver);
     return status;
 }
@@ -2057,21 +2056,21 @@ USB_INT acm_serial_mem_dump(USB_PCHAR buffer, USB_UINT buf_size)
 /*****************************************************************
 Parameters    :   None
 Return        :
-Description   :  USB serial模锟斤拷锟斤拷始锟斤拷锟斤拷锟斤拷
+Description   :  USB serial模块初始化入口
 *****************************************************************/
 USB_INT usb_serial_init(USB_VOID)
 {
-    /*锟斤拷锟斤拷平台*/
+    /*巴龙平台*/
     USB_INT ret_val = 0;
 
     DBG_I(MBB_ACM,"%s:entry!\n",__func__);
 #ifdef MBB_USB_UNITARY_B
-    /*锟斤拷取锟斤拷前console锟截碉拷*/
+    /*获取当前console回调*/
 #endif
 
-    /*锟斤拷通9xN5平台锟节核诧拷支锟街讹拷NV锟斤拷锟斤拷NV值锟斤拷平台锟斤拷锟斤拷*/
+    /*高通9xN5平台内核不支持读NV，其NV值由平台适配*/
 #ifdef MBB_USB_UNITARY_Q
-    /*锟斤拷取锟斤拷前console锟截碉拷*/
+    /*获取当前console回调*/
     //usb_get_console_cb = xxx;
 #endif
     acm_ctx = acm_get_ctx();
