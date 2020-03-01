@@ -1840,7 +1840,7 @@ Parameters    :  USB_VOID
 Return        :
 Description   :  判断USB 控制台使能接口
 *****************************************************************/
-static inline gs_acm_is_console_enable(USB_VOID)
+static inline USB_INT gs_acm_is_console_enable(USB_VOID)
 {
 #if 0
 #ifdef USB_SECURITY
