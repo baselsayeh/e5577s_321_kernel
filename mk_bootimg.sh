@@ -8,7 +8,7 @@ if [[ $# -ne 3 ]] ; then
 else
 	KIMAGE_NAME="$1"
 	RAMDISK_NAME="$2"
-	KIMAGE_NAME="$3"
+	SECOND_NAME="$3"
 fi
 
 rm -f bootimg_mod.bin KERNEL.img
