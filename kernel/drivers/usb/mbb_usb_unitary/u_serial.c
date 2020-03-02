@@ -1842,7 +1842,6 @@ Description   :  判断USB 控制台使能接口
 *****************************************************************/
 static inline USB_INT gs_acm_is_console_enable(USB_VOID)
 {
-#if 0
 #ifdef USB_SECURITY
     if (1 == usb_port_enable("shell"))
     {
@@ -1859,9 +1858,6 @@ static inline USB_INT gs_acm_is_console_enable(USB_VOID)
     DBG_I(MBB_ACM,"gs_acm_is_console_enable is disable\n");
     return 0;
 #endif
-#endif
-
-    return (get_shell_lock() == 2);
 }
 
 static acm_ctx_t* acm_ctx = NULL;

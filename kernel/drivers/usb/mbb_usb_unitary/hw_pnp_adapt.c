@@ -585,7 +585,6 @@ USB_VOID pnp_usb_init_enum_stat(USB_VOID)
     setmode_state = -1;
 }
 
-#if 0
 /*****************************************************************
 Parameters    :  需要使能端口的名称
 Return        : 0:未使能1:使能
@@ -633,7 +632,6 @@ int usb_port_enable(char *name)
     return 0;
 }
 #endif /* MBB_USB_UNITARY_Q */
-#endif
 
 USB_VOID pnp_usb_queue_delay_work(struct delayed_work* dwork, unsigned long delay)
 {

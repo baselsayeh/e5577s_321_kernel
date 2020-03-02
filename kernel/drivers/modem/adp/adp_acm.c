@@ -68,7 +68,6 @@ s32 bsp_acm_open(u32 dev_id)
     }
     name = adp_acm_ctx[dev_id].dev_name;
 
-#if 0
     /*diag°²È«¿ØÖÆ*/
     if ((0 ==  strcmp(name, "/dev/acm_4g_diag")) || (0 ==  strcmp(name, "/dev/acm_gps")))
     {
@@ -97,7 +96,6 @@ s32 bsp_acm_open(u32 dev_id)
     {
         /*do nothing*/
     }
-#endif
 
     filp = filp_open(name, O_RDWR, 0);
     if (IS_ERR(filp)) {
