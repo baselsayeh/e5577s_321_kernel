@@ -9,6 +9,7 @@ Reverse:
 - get_hi_efusec_status_rd_status
 
 Set:
+- CONFIG_PRSITE to y
 - HW_TEST to ON
 
 Other:

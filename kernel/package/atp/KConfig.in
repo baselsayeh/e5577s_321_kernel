@@ -6,5 +6,5 @@ config ATP_COMMON
 	select TRACEPOINTS
 	bool "ATP common features"
 	default n
-#source "package/atp/network/KConfig.in"
+source "package/atp/network/KConfig.in"
 endmenu
