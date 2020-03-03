@@ -20,8 +20,10 @@
 #include <linux/times.h>
 #include <net/net_namespace.h>
 #include <asm/uaccess.h>
+#if 0
 #ifdef CONFIG_ATP_ROUTE
 #include <linux/atphooks.h>
+#endif
 #endif
 #include "br_private.h"
 
@@ -357,9 +359,11 @@ static int old_deviceless(struct net *net, void __user *uarg)
 
 		return br_del_bridge(net, buf);
 	}
+#if 0
 #ifdef CONFIG_ATP_ROUTE
     default:
 		ATP_HOOK_WITH_RETURN(ATP_BR_IOCTL_HOOK, (void *)net, (void *)args, NULL);
+#endif
 #endif
 	}
 

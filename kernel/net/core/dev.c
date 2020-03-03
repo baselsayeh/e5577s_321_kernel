@@ -136,8 +136,10 @@
 #include <linux/net_tstamp.h>
 #include <linux/static_key.h>
 #include <net/flow_keys.h>
+#if 0
 #ifdef CONFIG_ATP_ROUTE
 #include <linux/atphooks.h>
+#endif
 #endif
 #include "net-sysfs.h"
 #include "drv_cpufreq.h"
@@ -2241,9 +2243,11 @@ int dev_hard_start_xmit(struct sk_buff *skb, struct net_device *dev,
 	const struct net_device_ops *ops = dev->netdev_ops;
 	int rc = NETDEV_TX_OK;
 	unsigned int skb_len;
+#if 0
 #ifdef CONFIG_ATP_ROUTE
 	ATP_HOOK(ATP_DEV_XMIT, skb, dev, NULL, 0);
-#endif	
+#endif
+#endif
 	if (likely(!skb->next)) {
 		netdev_features_t features;
 

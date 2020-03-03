@@ -2,6 +2,7 @@
 
 Reverse:
 - bsp_acm_open (for usb access)
+- xt_dns_flt.c
 - wlan_at_get_packet_report (controls g_wifi_packet_new_rep and g_wifi_packet_rep)
 - get_hi_efusec_status_pd_status
 - get_hi_efusec_status_pgenb_status
@@ -9,7 +10,6 @@ Reverse:
 - get_hi_efusec_status_rd_status
 
 Set:
-- CONFIG_PRSITE to y
 - HW_TEST to ON
 
 Other:

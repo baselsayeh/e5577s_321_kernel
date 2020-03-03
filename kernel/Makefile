@@ -555,7 +555,8 @@ libs-y		:= lib/
 core-y		:= usr/
 endif # KBUILD_EXTMOD
 
-huaweidrivers-y	:= package/atp/network/bridge/atpkernel/src/ package/atp/network/common/kernel/src/ package/atp/iconconvert/kernel/src/  package/atp/network/dnscache/
+#huaweidrivers-y	:= package/atp/network/bridge/atpkernel/src/ package/atp/network/common/kernel/src/ package/atp/iconconvert/kernel/src/  package/atp/network/dnscache/
+huaweidrivers-y	:= 
 HUAWEIDRIVERS	:= $(huaweidrivers-y)
 
 ifeq ($(dot-config),1)
