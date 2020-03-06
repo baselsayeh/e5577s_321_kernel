@@ -1045,10 +1045,10 @@ module_init(wlan_at_init_bcm43241); /*lint !e529*/
 void wlan_at_get_packet_report (uint32_t param_1, uint32_t param_2, uint32_t param_3, uint32_t param_4) {
 	PLAT_WLAN_INFO("enter");
 
-	g_wifi_packet_new_rep[0] = param1;
-	g_wifi_packet_new_rep[1] = param2;
-	g_wifi_packet_new_rep[2] = param3;
-	g_wifi_packet_new_rep[3] = param4;
+	g_wifi_packet_new_rep[0] = param_1;
+	g_wifi_packet_new_rep[1] = param_2;
+	g_wifi_packet_new_rep[2] = param_3;
+	g_wifi_packet_new_rep[3] = param_4;
 
 	/* g_wifi_packet_new_rep: wlan_at_get_packet_report, ATSetWifiRPCKG, ATSetWifiRX
 	   g_wifi_packet_rep:                                ATSetWifiRPCKG, ATSetWifiRX */
