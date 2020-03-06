@@ -1053,4 +1053,5 @@ void wlan_at_get_packet_report (uint32_t param_1, uint32_t param_2, uint32_t par
 	/* g_wifi_packet_new_rep: wlan_at_get_packet_report, ATSetWifiRPCKG, ATSetWifiRX
 	   g_wifi_packet_rep:                                ATSetWifiRPCKG, ATSetWifiRX */
 }
+EXPORT_SYMBOL(wlan_at_get_packet_report);
 
