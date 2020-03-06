@@ -951,7 +951,7 @@ STATIC int32 ATGetWifiParangeSupport(WLAN_AT_BUFFER_STRU *strBuf)
 }
 
 
-STATIC WLAN_CHIP_OPS rtl_def_ops = 
+STATIC WLAN_CHIP_OPS bcm43241_ops = 
 {
     .WlanATSetWifiEnable = ATSetWifiEnable, ////////
     .WlanATGetWifiEnable = ATGetWifiEnable, ////////
@@ -1022,7 +1022,7 @@ STATIC WLAN_CHIP_OPS rtl_def_ops =
 int __init wlan_at_init_bcm43241(void)
 {
     PLAT_WLAN_INFO("enter");
-    wlan_at_reg_chip(bcm43241, &rtl_def_ops);
+    wlan_at_reg_chip(bcm43241, &bcm43241_ops);
     PLAT_WLAN_INFO("exit");
     return AT_RETURN_SUCCESS;
 }
