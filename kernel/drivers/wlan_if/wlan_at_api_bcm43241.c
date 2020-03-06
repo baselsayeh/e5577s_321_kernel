@@ -235,6 +235,14 @@ const uint16 g_ausChannels[] = {2412,2417,2422,2427,2432,2437,2442,2447,2452,245
 /*===========================================================================
                        º¯ÊýÊµÏÖ
 ===========================================================================*/
+
+
+//found in the original kernel, needed for the original BCMDHD module
+uint32_t g_wifi_packet_new_rep[4] = {0};
+uint32_t g_wifi_packet_report[4] = {0};
+void wlan_at_get_packet_report (uint32_t param_1, uint32_t param_2, uint32_t param_3, uint32_t param_4);
+//
+
 /*===========================================================================
  (1)^WIENABLE ÉèÖÃWiFiÄ£¿éÊ¹ÄÜ
 ===========================================================================*/
@@ -796,17 +804,25 @@ STATIC int32 ATGetWifiRX(WLAN_AT_WIRX_STRU *params)
 *****************************************************************************/
 STATIC int32 ATSetWifiRPCKG(int32 flag)
 {
-    return AT_RETURN_FAILURE;
-
+    int8   acCmd[WIFI_CMD_MAX_SIZE] = {0};
     ASSERT_WiFi_OFF(AT_RETURN_FAILURE);
 
     if (0 != flag)
     {
-        PLAT_WLAN_INFO("Exit on flag=%d", (int)flag);
-        return (AT_RETURN_FAILURE);
+        memset(acCmd, 0x00, sizeof(acCmd));
+        SIZEOF_SNPRINTF(acCmd, WIFI_BCRMTOOL_PATH, "wl counters");
+        PLAT_WLAN_INFO("[ret=%d] %s", 0, acCmd);
+        WIFI_RUN_CMD(acCmd);
+        msleep(100);
+
+	g_wifi_packet_report[0] = g_wifi_packet_new_rep[0];
+        g_wifi_packet_report[1] = g_wifi_packet_new_rep[1];
+        g_wifi_packet_report[2] = g_wifi_packet_new_rep[2];
+        g_wifi_packet_report[3] = g_wifi_packet_new_rep[3];
+
+        return (AT_RETURN_SUCCESS);
     }
 
-    WIFI_TEST_CMD(WIFI_BCRMTOOL_PATH" " "wl counters"  "mp_reset_stats");
     return (AT_RETURN_SUCCESS);
 }
 
@@ -819,8 +835,6 @@ STATIC int32 ATSetWifiRPCKG(int32 flag)
 *****************************************************************************/
 STATIC int32 ATGetWifiRPCKG(WLAN_AT_WIRPCKG_STRU *params)
 {
-    return AT_RETURN_FAILURE;
-
     char buf[WIFI_CMD_MAX_SIZE] = {0};
     char *p_buf = NULL;
     const char *info_key = "Rx OK:";
@@ -838,10 +852,8 @@ STATIC int32 ATGetWifiRPCKG(WLAN_AT_WIRPCKG_STRU *params)
 
     msleep(100);
 
-    /*int new = g_wifi_packet_new_rep[2]; //assuming new
-    int old = g_wifi_packet_report[2]; //assuming new*/
-    int new = 0;
-    int old = 0;
+    short new = g_wifi_packet_new_rep[2] & 0xFFFF;
+    short old = g_wifi_packet_report[2] & 0xFFFF;
 
     PLAT_WLAN_INFO("Enter [old = %d, new = %d]", old, new);
     params[1] = (WLAN_AT_WIRPCKG_STRU) {0, 0};
@@ -979,8 +991,8 @@ STATIC WLAN_CHIP_OPS bcm43241_ops =
     .WlanATSetWifiRX = ATSetWifiRX, ///////#
     .WlanATGetWifiRX = ATGetWifiRX, ////////
 
-    .WlanATSetWifiRPCKG = ATSetWifiRPCKG, ///////#
-    .WlanATGetWifiRPCKG = ATGetWifiRPCKG, ///////#
+    .WlanATSetWifiRPCKG = ATSetWifiRPCKG, ///////
+    .WlanATGetWifiRPCKG = ATGetWifiRPCKG, ///////
 
     .WlanATGetWifiInfo  = NULL,
 
@@ -1027,4 +1039,18 @@ int __init wlan_at_init_bcm43241(void)
     return AT_RETURN_SUCCESS;
 }
 module_init(wlan_at_init_bcm43241); /*lint !e529*/
+
+
+//found in the original kernel, needed for the original BCMDHD module
+void wlan_at_get_packet_report (uint32_t param_1, uint32_t param_2, uint32_t param_3, uint32_t param_4) {
+	PLAT_WLAN_INFO("enter");
+
+	g_wifi_packet_new_rep[0] = param1;
+	g_wifi_packet_new_rep[1] = param2;
+	g_wifi_packet_new_rep[2] = param3;
+	g_wifi_packet_new_rep[3] = param4;
+
+	/* g_wifi_packet_new_rep: wlan_at_get_packet_report, ATSetWifiRPCKG, ATSetWifiRX
+	   g_wifi_packet_rep:                                ATSetWifiRPCKG, ATSetWifiRX */
+}
 
