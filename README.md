@@ -3,6 +3,9 @@
 ## Compilation of the kernel
 Refer to kernel/README_Kernel.txt
 
+## Warn
+This kernel boots fine, but download mode does not work.
+
 ## Instalation of the kernel
 Firstly make sure that you have an extracted bootimg from your device (you can use [osm0sis's mkbootimg](https://github.com/osm0sis/mkbootimg))
 
